@@ -87,56 +87,124 @@ main {
     color: white;
 }
 
-#editor {
+#header {
     display: flex;
     padding: 0 25px;
     background-color: var(--util);
     min-height: 4vw;
+    align-items: center;
+    font-family: "Share Tech", sans-serif;
+    user-select: none;
+}
+
+#header h2 {
+    padding-right: 20px;
+    border-right: 2px solid var(--main);
+}
+
+#header p {
+    padding-left: 20px;
 }
 
 #note-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(240px, 1fr));
+    grid-auto-rows: 8px;
+    column-gap: 16px;
+    row-gap: 0;
+    padding: 16px;
+    align-items: start;
 }
 
 .note {
-    margin: 15px;
-    padding: 5%;
-    text-align: justify;
-    border-radius: 15px;
-    box-shadow: 0 0 5px #606060, 0 0 1px var(--main) ;
+    align-self: start;
 }
 
-.note h5 {
+.note .note-inner {
+    padding: 5%;
+    text-align: justify;
+    max-height: fit-content;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #606060, 0 0 1px var(--main);
+}
+
+.note-inner h5 {
     font-size: medium;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.note p {
+.note-inner p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: start;
     font-size: small;
 }
 
-.note:hover {
+.note .note-inner:hover {
     background-color: #101010;
 }
 
-.note .tag {
+.tag {
+    display: flex;
     font-size: smaller;
     margin-top: 10px;
     font-family: Arial, Helvetica, sans-serif;
     border: 1px solid #999;
+    height: 20px;
     width: fit-content;
     padding: 2px 5px;
     border-radius: 20px;
+    align-items: center;
+    align-content: center;
 }
 
-.note .tag:hover {
+.tag:hover {
     background-color: var(--main);
     border: 1px solid var(--main);
 }
 
-.note .tag i {
+.tag i {
     margin-right: 5px;
+}
+
+#show {
+    background-color: rgba(17, 17, 17, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    padding-left: 25vw;
+    padding-top: 10vw;
+}
+
+#show-container {
+    color: white;
+    min-width: 50vw;
+    max-width: 50vw;
+    min-height: 25vw;
+    background-color: var(--bg-aside);
+    border: 2px solid white;
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 20px;
+}
+
+#show-container div:focus {
+    outline: none;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--util);
+}
+
+#show-title {
+    font-size: x-large;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#show-body {
+    font-size: medium;
+}
+
+#show.invisible {
+    visibility: hidden;
 }
