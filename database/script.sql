@@ -1,0 +1,18 @@
+
+DROP DATABASE IF EXISTS noteit;
+CREATE DATABASE noteit;
+USE noteit;
+
+CREATE TABLE tag(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50)
+);
+
+CREATE TABLE notes(
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    content TEXT,
+    tag VARCHAR(50),
+    FOREIGN KEY (tag) REFERENCES tag(name)
+);
+
+
