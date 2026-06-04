@@ -1,10 +1,12 @@
+const showTime = document.getElementById("showTime")
 
-
-function actualizarHora() {
+function updateTime() {
     var now = new Date();
-    const hora = now.toLocaleTimeString("es-ES");
-    console.log(hora);
+    const time = now.toLocaleTimeString("es-ES"); // Change to your local time
+
+    splitTime = time.split(":"),
+    
+    showTime.innerHTML = `${splitTime[0]}:${splitTime[1]}:<span>${splitTime[2]}</span>`;
 }
 
-actualizarHora();
-// setInterval(actualizarHora, 1000)
+setInterval(updateTime, 1000)

@@ -33,7 +33,6 @@ function renderNotes(list) {
                 <div class="tag"><i class="fa-solid fa-tag"></i>${note[3]}</div>
             </div>`
 
-        
         container.appendChild(main);
     });
 }
